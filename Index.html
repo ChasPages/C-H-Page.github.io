@@ -1,276 +1,221 @@
-<title>C=H Home Page</title>
-<link rel="stylesheet" href="Style.csss">
+<link rel="stylesheet" href="Style.css">
 <link rel="icon" href="C-removebg.png">
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    background: url(CH_Logo_design_2_20240626_192731_0000.png) no-repeat center center fixed; 
-    background-size: cover;
-    color: #ffffff;
-  }
-  .sidebar {
-    height: 100vh;
-    width: 250px;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    background-color: rgba(9, 11, 12, 0.9); 
-    padding-top: 20px;
-    overflow-y: auto; 
-    box-sizing: border-box; 
-  }
-  .sidebar-logo,
-  .discord-logo {
-    display: block;
-    margin: 0 auto 10px auto;
-    width: 60%; 
-  }
-  .sidebar-logo img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  .discord-logo {
-    width: 20%; 
-    margin-bottom: 20px; 
-  }
-  .discord-logo img {
-    display: block;
-    width: 100%;
-    height: auto;
-    cursor: pointer; 
-  }
-  .menu-item {
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 16px;
-    color: #ecf0f1;
-    display: block;
-    transition: background-color 0.3s, color 0.3s;
-    white-space: nowrap; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-  }
-  .menu-item:hover {
-    background-color: #1d4914;
-    color: #fff;
-  }
-  .main-content {
-    margin-left: 250px;
-    padding: 20px;
-    transition: margin-left 0.5s;
-  }
-  @media (max-width: 768px) {
-    .sidebar {
-      width: 100px;
-    }
-    .sidebar-logo img,
-    .discord-logo img {
-      margin: 0 auto;
-    }
-    .menu-item {
-      text-align: center;
-      padding: 10px;
-      font-size: 14px;
-    }
-    .main-content {
-      margin-left: 100px;
-    }
-  }
-
-  h1 {
-  text-align: center;
-}
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: #000000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+        }
+        .navbar a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .navbar a:hover {
+            background: #ddd;
+            color: black;
+        }
+        .navbar .icon-bar {
+            display: flex;
+        }
+        .navbar .icon-bar a {
+            margin: 0 2px;
+        }
+        .navbar .icon-bar a img {
+            width: 30px;
+            height: 30px;
+        }
+        @media screen and (max-width: 600px) {
+            .navbar a {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+            .navbar .icon-bar a img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #000;
+            color: white;
+            margin-top: 50px;
+            border-radius: 25px;
+        }
+        .about-section h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .about-section p {
+            font-size: 20px;
+        }
+        .about-section img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0 4px;
+        }
+        .column {
+            flex: 30%;
+            max-width: 30%;
+            padding: 0 4px;
+        }
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+        }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            width: 100%;
+            border-radius: 5px;
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            position: relative;
+            width: 100%;
+        }
+        .text {
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 4px;
+            opacity: 0;
+            transition: opacity .5s;
+        }
+        .text.top {
+            top: 8px;
+            bottom: auto;
+        }
+        .container:hover .text {
+            opacity: 1;
+        }
+        @media screen and (max-width: 600px) {
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
+            .about-section h1 {
+                font-size: 30px;
+            }
+            .about-section p {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div class="sidebar">
-  <a href="#" class="sidebar-logo">
-    <img src="C-removebg.png" alt="C=H Logo">
-  </a>
-  <a href="https://discord.gg/hWax3Pgzvb" class="discord-logo">
-    <img src="Discord Logo.webp" alt="Discord Logo">
-  </a>
-  <a href="Index.html" class="menu-item">Home</a>
-  <a href="Staff Photos.html" class="menu-item">Staff Team</a>
-  <a href="Club Room Rules.html" class="menu-item">Club Rules</a>
-</div>
-
-<div class="main-content">
-  <h1>C=H Home Page</h1>
-  <p> <style>
-    #gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px; 
-      justify-content: flex-start;
-      margin-bottom: 20px;
-    }
-  
-    .photo-holder {
-      position: relative;
-      flex: 1 0 calc(33.333% - 15px); 
-      border: 1px solid #131010;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      transition: box-shadow 0.3s ease-in-out;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-  
-    .photo-holder:hover {
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-  
-    .photo-holder img {
-      width: 100%;
-      display: block;
-      transition: transform 0.5s ease-in-out;
-    }
-  
-    .photo-holder:hover img {
-      transform: scale(1.05);
-    }
-  
-    .text-bottom,
-    .top-text {
-      position: absolute;
-      left: 0;
-      right: 0;
-      background: rgba(0,0,0,0.7);
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-  
-    .text-bottom {
-      bottom: 0;
-      border-radius: 0 0 8px 8px;
-    }
-  
-    .top-text {
-      top: 0;
-    }
-  
-    .photo-holder:hover .text-bottom,
-    .photo-holder:hover .top-text {
-      opacity: 1;
-    }
-
-
-  </style>
-  </head>
-  <body>
-  
-  <div id="gallery">
-    <div class="photo-holder">
-      <img src="The Room 209.jpg" alt="C=H Club Room Photo">
-      <div class="text-bottom">C=H Club Room</div>
+    <div class="navbar">
+        <div>
+            <a href="Index.html">Home</a>
+            <a href="Staff Photos.html">Staff Team</a>
+            <a href="Club Room Rules.html">Club Rules</a>
+        </div>
+        <div class="icon-bar">
+            <a href="https://discord.gg/hWax3Pgzvb" target="_blank"><img src="Discord Logo.webp" alt="https://discord.com"></a>
+        </div>
     </div>
-    <div class="photo-holder">
-      <img src="The Room 209.jpg" alt="Room.209 Photo">
-      <div class="text-bottom">C=H Room.209</div>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <img src="The C=H Room.jpg" alt="Photo Of The C=H Club Room" style="width:100%">
+                    <div class="text">C=H Club Room</div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <img src="The Room 209.jpg" alt="Photo Of Room.209" style="width:100%">
+                    <div class="text">Room.209</div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <img src="Rickys Roach Diner.jpg" alt="Photo Of Rickys Roach Diner" style="width:100%">
+                    <div class="text">Rickys Roach Diner</div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="photo-holder">
-      <img src="Rickys Roach Diner.jpg" alt="Rickys Roach Diner Photo">
-      <div class="text-bottom">Rickys Roach Diner</div>
+    <div class="about-section">
+        <img src="C-removebg.png" alt="C=H Logo">
+        <h1>About Us</h1>
+        <p>  "The Chas=Human lifestyle Community" Is a creative community I created in a popular VR game called "Recroom" in 2016, it soon after became much more then a hobby, club or a brand. It became a term for empowerment, strength and personal growth our moto is "BetterPeople.BetterHumans=A Better World". If we become better versions of our selves in personal growth and self care we become better people, when we as people reach happiness within ourself we become better humans by nature. Making the world a better place with people content on who they are, and the truth they live.</p>
     </div>
-
-
-
-<head>
-<title>About Us</title>
-<style>
-  .about-section {
-    text-align: center;
-    margin: 50px auto;
-    width: 80%; 
-    background-color: #111111; 
-    padding: 20px;
-    border-radius: 8px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
-  }
-
-  
-  .about-logo {
-    display: block;
-    margin: 0 auto 20px; 
-    width: 80px; 
-    height: auto;
-  }
-
-  
-  .about-heading {
-    margin-bottom: 10px;
-    font-size: 24px; 
-    color: #ffffff; 
-  }
-
-  .about-text {
-    font-size: 16px; 
-    color: #555; 
-    line-height: 1.4;
-  }
-</style>
-</head>
-<body>
-
-<div class="about-section">
-  <img src="C-removebg.png" alt="C=H Logo" class="about-logo">
-  <h2 class="about-heading">What Is The Chas=Human Lifestyle Community?</h2>
-  <p class="about-text">
-    "The Chas=Human lifestyle Community" Is a creative community I created in a popular VR game called "Recroom" in 2016, it soon after became much more then a hobby, club or a brand. It became a term for empowerment, strength and personal growth our moto is "BetterPeople.BetterHumans=A Better World". If we become better versions of our selves in personal growth and self care we become better people, when we as people reach happiness within ourself we become better humans by nature. Making the world a better place with people content on who they are, and the truth they live.
-  </p>
-</div>
-
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <img src="Ross Fat Man And Stork.jpg" alt="Photo Of Ross Fat Man And Stork" style="width:100%">
+                    <div class="text">Knowledge is power, but it's powerless if you don't acknowledge it</div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <img src="Lego And Ross.jpg" alt="Photo Of Lego And Ross" style="width:100%">
+                    <div class="text">There's always cheese in life</div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <img src="Ross And Spook.jpg" alt="Photo Of Ross And Spook" style="width:100%">
+                    <div class="text">You do not find the happy life. You make it</div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <img src="Photo Of 4 peps.jpg" alt="Photo Of $ peps" style="width:100%">
+                    <div class="text">There's always more than one option to a solution</div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <img src="Ross And Stork.jpg" alt="Photo Of Ross And Stork" style="width:100%">
+                    <div class="text">Put something stupid under my photo</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 
-      
-<div class="photo-holder">
-  <img src="Ross Fat Man And Stork.jpg" alt="Photo Of ross stork and fat man">
-  <div class="text-bottom">Knowledge is power, but it's powerless if you don't acknowledge it. </div>
-</div>
-<div class="photo-holder">
-  <img src="Lego And Ross.jpg" alt="Photo Of Lego And Ross">
-  <div class="text-bottom">There's always cheese in life</div>
-</div>
-<div class="photo-holder">
-  <img src="Ross And Spook.jpg" alt="Photo Of Spook And Ross">
-  <div class="text-bottom">You do not find the happy life. You make it</div>
-</div>
-<div class="photo-holder">
-  <img src="Photo Of 4 peps.jpg" alt="Photo Of For players">
-  <div class="text-bottom">There's always more than one option to a solution.</div>
-</div>
-<div class="photo-holder">
-  <img src="Ross And Stork.jpg" alt="Photo Of Ross And Stork">
-  <div class="text-bottom">Put something stupid under my photo</div>
-</div>
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </p>
-</div>
-
-</body>
