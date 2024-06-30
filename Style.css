@@ -9,3 +9,15 @@ background-size: cover;}
     flex-direction: column;
   }
 }
+
+@media (max-width: 600px) {
+  .discord-logo {
+    width: 24px; 
+    height: auto; 
+  }
+  .rules-list li {
+    font-size: 14px; 
+    color: #333; 
+  }
+}
+
