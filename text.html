@@ -1,5 +1,6 @@
 
 <link rel="stylesheet" href="Style.css">
+<link rel="icon" href="C-removebg.png">
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +13,13 @@
         }
         .navbar {
             overflow: hidden;
-            background-color: #333;
-            text-align: center;
+            background-color: #000000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
         }
         .navbar a {
-            display: inline-block;
             color: #f2f2f2;
             text-align: center;
             padding: 14px 16px;
@@ -27,11 +30,25 @@
             background: #ddd;
             color: black;
         }
+        .navbar .icon-bar {
+            display: flex;
+        }
+        .navbar .icon-bar a {
+            margin: 0 2px;
+        }
+        .navbar .icon-bar a img {
+            width: 30px;
+            height: 30px;
+        }
         @media screen and (max-width: 600px) {
             .navbar a {
                 display: block;
                 width: 100%;
                 text-align: left;
+            }
+            .navbar .icon-bar a img {
+                width: 20px;
+                height: 20px;
             }
         }
         .about-section {
@@ -118,94 +135,84 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <div>
+            <a href="Index.html">Home</a>
+            <a href="Staff Photos.html">Staff Team</a>
+            <a href="Club Room Rules.html">Club Rules</a>
+        </div>
+        <div class="icon-bar">
+            <a href="https://discord.gg/hWax3Pgzvb" target="_blank"><img src="Discord Logo.webp" alt="https://discord.com"></a>
+        </div>
     </div>
     <div class="row">
-        <!-- Existing photos -->
         <div class="column">
             <div class="card">
                 <div class="container">
-                    <img src="The C=H Room.jpg" alt="Image 1" style="width:100%">
-                    <div class="text top">Top Text 1</div>
-                    <div class="text">Bottom Text 1</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="card">
-                <div class="container">
-                    <img src="The Room 209.jpg" alt="Image 1" style="width:100%">
-                    <div class="text top">Top Text 1</div>
-                    <div class="text">Bottom Text 1</div>
+                    <img src="The C=H Room.jpg" alt="Photo Of The C=H Club Room" style="width:100%">
+                    <div class="text">C=H Club Room</div>
                 </div>
             </div>
         </div>
         <div class="column">
             <div class="card">
                 <div class="container">
-                    <img src="Rickys Roach Diner.jpg" alt="Image 1" style="width:100%">
-                    <div class="text top">Top Text 1</div>
-                    <div class="text">Bottom Text 1</div>
+                    <img src="The Room 209.jpg" alt="Photo Of Room.209" style="width:100%">
+                    <div class="text">Room.209</div>
                 </div>
             </div>
         </div>
-        <!-- ... other photo columns ... -->
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <img src="Rickys Roach Diner.jpg" alt="Photo Of Rickys Roach Diner" style="width:100%">
+                    <div class="text">Rickys Roach Diner</div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="about-section">
-        <img src="C-removebg.png" alt="Logo">
+        <img src="C-removebg.png" alt="C=H Logo">
         <h1>About Us</h1>
-        <p> "The Chas=Human lifestyle Community" Is a creative community I created in a popular VR game called "Recroom" in 2016, it soon after became much more then a hobby, club or a brand. It became a term for empowerment, strength and personal growth our moto is "BetterPeople.BetterHumans=A Better World". If we become better versions of our selves in personal growth and self care we become better people, when we as people reach happiness within ourself we become better humans by nature. Making the world a better place with people content on who they are, and the truth they live.</p>
+        <p>  "The Chas=Human lifestyle Community" Is a creative community I created in a popular VR game called "Recroom" in 2016, it soon after became much more then a hobby, club or a brand. It became a term for empowerment, strength and personal growth our moto is "BetterPeople.BetterHumans=A Better World". If we become better versions of our selves in personal growth and self care we become better people, when we as people reach happiness within ourself we become better humans by nature. Making the world a better place with people content on who they are, and the truth they live.</p>
     </div>
     <div class="row">
-        
-
         <div class="column">
             <div class="card">
                 <div class="container">
-                    <img src="Ross Fat Man And Stork.jpg" alt="Image 1" style="width:100%">
-                    <div class="text top">Top Text 1</div>
-                    <div class="text">Bottom Text 1</div>
+                    <img src="Ross Fat Man And Stork.jpg" alt="Photo Of Ross Fat Man And Stork" style="width:100%">
+                    <div class="text">Knowledge is power, but it's powerless if you don't acknowledge it</div>
                 </div>
             </div>
         </div>
         <div class="column">
             <div class="card">
                 <div class="container">
-                    <img src="Lego And Ross.jpg" alt="Image 1" style="width:100%">
-                    <div class="text top">Top Text 1</div>
-                    <div class="text">Bottom Text 1</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="card">
-                <div class="container">
-                    <img src="Ross And Spook.jpg" alt="Image 1" style="width:100%">
-                    <div class="text top">Top Text 1</div>
-                    <div class="text">Bottom Text 1</div>
+                    <img src="Lego And Ross.jpg" alt="Photo Of Lego And Ross" style="width:100%">
+                    <div class="text">There's always cheese in life</div>
                 </div>
             </div>
         </div>
         <div class="column">
             <div class="card">
                 <div class="container">
-                    <img src="Ross And Stork.jpg" alt="Image 1" style="width:100%">
-                    <div class="text top">Top Text 1</div>
-                    <div class="text">Bottom Text 1</div>
+                    <img src="Ross And Spook.jpg" alt="Photo Of Ross And Spook" style="width:100%">
+                    <div class="text">You do not find the happy life. You make it</div>
                 </div>
             </div>
         </div>
-        <!-- New photo under "About Us" -->
         <div class="column">
             <div class="card">
                 <div class="container">
-                    <img src="Photo Of 4 peps.jpg" alt="New Image" style="width:100%">
-                    <div class="text top">New Top Text</div>
-                    <div class="text">New Bottom Text</div>
+                    <img src="Photo Of 4 peps.jpg" alt="Photo Of $ peps" style="width:100%">
+                    <div class="text">There's always more than one option to a solution</div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <img src="Ross And Stork.jpg" alt="Photo Of Ross And Stork" style="width:100%">
+                    <div class="text">Put something stupid under my photo</div>
                 </div>
             </div>
         </div>
